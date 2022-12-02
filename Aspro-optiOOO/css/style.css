@@ -1,6 +1,8 @@
 body{
     margin: 0;
     font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
 }
 * {
     box-sizing: border-box;
@@ -46,9 +48,9 @@ a, button{
     .img_1{
         transform: scale(0.8);
     }
-    .firstBlok_textContent{
+    /*.firstBlok_textContent{
         width: 390px;
-    }
+    }*/
     .firstBlok_h1{
         text-align: center;
     }
@@ -56,11 +58,11 @@ a, button{
         text-align: center;
     }
     .box2_L{
-        width: 460px !important;
+        /*width: 460px !important;*/
         margin: 0 auto;
     }
     .box2_R{
-        width: 460px !important;
+       /* width: 460px !important;*/
         margin: 0 auto;
     }
     .blok_img{
@@ -69,17 +71,17 @@ a, button{
     }
     .blok_div,
     .blok1_div {
-        width: 450px !important;
+       /* width: 450px !important;*/
         margin: 0 auto !important;
     }
     .titlSlider p {
         font-size: 22px !important;
     }
     .cont_slider{
-        width: 780px !important;
+       /* width: 780px !important;*/
     }
     .Eror1 img {
-        width: 300px !important;
+       /* width: 300px !important;*/
     }
     .groceryBox h4 {
         font-size: 20px;
@@ -108,15 +110,27 @@ a, button{
 @media all and (max-width: 979px) {
     .burger_button{
         visibility: visible;
+        transform: scale(1.4);
     }
     .disappear {
         visibility: hidden;
     }
     .header{
-        height: 100px !important;
+        height: 153px !important;
+    }
+    .header_logo{
+        transform: scale(1.2);
+        margin: 43px 0 !important;
     }
     .textBlok{
         flex-wrap: wrap !important;
+        width: 979px !important;
+    }
+    .underTextBlok{
+        width: 979px !important;
+    }
+    .backgroundGray{
+        width: 979px !important;
     }
     .firstBlok_textContent{
         margin-left: auto;
@@ -145,6 +159,12 @@ a, button{
     .card1 {
         width: 600px !important;
         margin: 15px auto !important;
+    }
+    .ouerProj{
+        width: 979px !important;
+    }
+    .Stage {
+        width: 979px !important;
     }
     .forStage {
         display:contents !important;
@@ -178,6 +198,16 @@ a, button{
     .Numiration {
         display: block !important;
         margin-right: 40px;
+    }
+    .Eror_title,
+    .comentSlider,
+    .forWhat,
+    .ErorBlok,
+    .job_back,
+    .certificate,
+    .startBackgound,
+    .EndBackground {
+        width: 979px !important;
     }
     .header {
         position: fixed !important;
@@ -259,16 +289,19 @@ a, button{
 .popUpContent a {
     text-decoration: none;
     color: #000000;
-    font-size: 18px;
+    font-size: 36px;
     font-weight: 400;
     line-height: 1.17;
-    margin: 20px auto;
+}
+.popUpContent p {
+    margin: 60px 0;
+    padding: 15px 0;
 }
 /*анимированая кнопка меню*/
 .burger_button{
     position: absolute;
-    top: 40px;
-    right: 20px;
+    top: 62px;
+    right: 45px;
     display: inline-block;
     cursor: pointer;
 }
