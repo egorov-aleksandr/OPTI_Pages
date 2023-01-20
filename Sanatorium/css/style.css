@@ -1,6 +1,11 @@
 body{
     margin: 0;
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 a, button{
@@ -9,43 +14,29 @@ a, button{
 }
 
 /*Шапка страницы*/
-.firstBlock{
-    width: 100%;
-    height: auto;
-}
-header{   
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1%;
+.block1{
+    z-index: 9;
+    margin-top: -435px;
 }
 
+header{  
+    width: 1920px;
+    height: 80px; 
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
 .logoImg{
     height: 68px;
     width: 136px;
 }
-
-div.logo{
-    margin-left: 12%;
-}
-
-div.phone{
-    margin-right: 12%;
-}
-
 .headerMenu{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-
 }
-
-.headerMenu div{
-    margin-left: 6%;
-    margin-right: 6%;
-}
-
 .headerMenu a{
     font-family: 'Raleway';
     font-style: normal;
@@ -55,18 +46,27 @@ div.phone{
     text-align: center;
 
     color: #333333;
+    margin-left: 25px;
+    margin-right: 25px; 
 }
-
-.phoneNumer{
+.logo, .phone{
+    margin-left: 154px;
+    margin-right: 154px;
+}
+a.phoneNumber{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
     text-align: right;
-}
 
+    color: #212121;
+}
 a.phoneText {
+    width: 120px;
+    height: 16px;
+
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 500;
@@ -77,11 +77,85 @@ a.phoneText {
 
     color: #1F9F8E;
 }
+/*Блок под шапкой*/
+.underHeaderBlock{
+    width: 1920px;
+    height: 550px;
 
-/*Первый блок с названием курорта*/
+    display: flex;
+    flex-direction: column;
+}
+.baseFon{
+    margin-bottom: -800px;
+    margin-left: 600px;
+    z-index: 1;
+}
+.treeFon{
+    height: 810px;
+    z-index: 2;
+    margin-bottom: -780px;
+    margin-left: 1634px;
+    margin-top: -65px;
+}
+.cloud{
+    z-index: 2;
+    height: 400px;
+    margin-top: -15px;
+    margin-right: 650px;
+}
+.upCloud{
+    z-index: 3;
+    height: 400px;
+    margin-top: -300px;
+    margin-right: 600px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.upCloud2{
+    z-index: 3;
+    height: 400px;
+    margin-top: -350px;
+    margin-bottom: -250px;
+    margin-right: 600px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.underUpCloud{
+    z-index: 4;
+    margin-top: -250px;
+    margin-right: 300px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.underUpCloud2{
+    z-index: 5;
+    margin-right: 920px;
+    margin-top: -400px;
+}
+.lastCloud{
+    z-index: 6;
+    margin-top: -215px;
+    margin-right: 180px;
+    margin-bottom: 10px;
+}
+.lastCloud2{
+    z-index: 7;
+    margin-right: 1100px;
+    margin-top: -500px;
+}
+.owl{
+    z-index: 4;
+    width: 238px;
+    height: 122px;
+
+    margin-top: -400px;
+    margin-left: 100px;
+}
 .nameCompany{
-    margin-left: 12%;
-    margin-top: 4%;
+    width: 829px;
+    height: 163px;
+    margin-top: 130px;
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 234px;
 }
 .titleBlock1{
     font-family: 'Cormorant';
@@ -104,38 +178,27 @@ a.phoneText {
     color: #333333;
     
 }
-
-/*блок с cashback*/
-.cashbackBlock{
-    margin-left: 12%;
-    margin-top: 2%;
-}
 .cashbackButton2{
     display: flex;
     flex-direction: row;
 
     width: 377px;
     height: 110px;
+    margin-left: 234px;
+    margin-top: 40px;
 
     border: 2px solid #F6F6F6;
     border-radius: 30px;
 }
-
 .cashbackDefinition{
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
-    /* or 144% */
-    
-    
-    /* Чёрный */
-    
-    color: #333333;
-    
-}
 
+    color: #333333;   
+}
 .cashbackButton{
 
     width: 110px;
@@ -148,7 +211,6 @@ a.phoneText {
     box-shadow: 0px 20px 25px -15px rgba(174, 174, 174, 0.64);
     border-radius: 30px;
 }
-
 p.cashback{
     font-family: 'Raleway';
     font-style: normal;
@@ -159,7 +221,6 @@ p.cashback{
 
     color: #1F9F8E;
 }
-
 p.cashbackNumber{
     font-family: 'Montserrat';
     font-style: normal;
@@ -171,7 +232,6 @@ p.cashbackNumber{
     color: #1F9F8E;
     margin-top: -6%;
 }
-
 .cashbackCard{
     font-family: 'Raleway';
 
@@ -181,10 +241,9 @@ p.cashbackNumber{
 
     color: #333333;
 }
-
 .consultationButton{
-    margin-left: 12%;
-    margin-top: 2%;
+    margin-left: 234px;
+    margin-top: 60px;
 }
 .consult{
     font-family: 'Raleway';
@@ -207,16 +266,23 @@ p.cashbackNumber{
     height: 75px;
     border: none;
 }
-/*Второй блок со стоимостью путевок*/
-.secondBlock{
-    width: 100%;
-    height: 1207px;
+.arka{
+    z-index: 9;
+    position: relative;
+    margin-top: -10px;
+}
+/*Путёвки*/
+.tours{
+    width: 1920px;
+    height: 1287px;
+
+    margin-top: -1100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    background: #FAFBFB;  
-    margin-top: 4%;
+    background: #FAFBFB; 
+    z-index: 10; 
 }
 
 .mainTitle{
@@ -254,10 +320,9 @@ p.cashbackNumber{
     color: #333333;
     margin-top: -1%;
 }
-
 /*СЛАЙДЕР*/
 .room-slider{
-    position: relative;
+    
     max-width: 1115px;
     margin: 20px auto;
 }
@@ -326,18 +391,17 @@ p.cashbackNumber{
 
     color: #333333;
 }
-
 img.roomImg{
     width: 330px;
     height: 188px;
 }
-
-/*Блок багаж*/
+/*Стоимость проживания*/
 .baggage{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     box-sizing: border-box;
     width: 770px;
@@ -348,13 +412,29 @@ img.roomImg{
     box-shadow: 0px 6px 15px -10px rgba(0, 0, 0, 0.8);
     border-radius: 5px;
 
+    margin-top: -110px;
+    z-index: 13;
+    
 }
+.secondTheme{
+    box-sizing: border-box;
 
-.baggageDiscription{
+    width: 750px;
+    height: 210px;
 
+    background: linear-gradient(180deg, #E6B674 0.01%, #EECC9C 100%);
+    box-shadow: 0px 12px 15px -10px rgba(0, 0, 0, 0.18);
+    border-radius: 5px;
+
+    position: relative;
+
+    z-index: 11;
+
+    margin-top: -200px;
+    margin-left: 10px;
 }
-
 .baggageText{
+    position: relative;
     width: 480px;
     height: 56px;
 
@@ -367,9 +447,10 @@ img.roomImg{
     text-align: justify;
 
     color: #333333;
+    margin-bottom: 35px;
     margin-left: 18%;
+    z-index: 3;
 }
-
 .baggageButton{
     width: 272px;
     height: 64px;
@@ -390,20 +471,14 @@ img.roomImg{
 
     text-shadow: 0px 1px 0px #BA9158;
     margin-left: 18%;
+    margin-bottom: 35px;
+    z-index: 2;
 }
-
-.thirdBlock{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: -5.5%;
+.baggageImage{
+    margin-right: 50px;
+    margin-bottom: 35px;
+    z-index: 2;
 }
-
-.baggageImg{
-    margin-right: 5%;
-}
-
 /*Преимущества*/
 .advantages{
     display: flex;
@@ -411,9 +486,9 @@ img.roomImg{
     justify-content: center;
     align-items: center;
 
-    margin-top: 5%;
+    width: 1920px;
+    height: 780px;
 }
-
 .advantagesText{
     width: 680px;
     height: 140px;
@@ -423,16 +498,11 @@ img.roomImg{
     font-weight: 600;
     font-size: 70px;
     line-height: 70px;
-    /* or 100% */
-    
+  
     text-align: center;
-    
-    /* Чёрный */
-    
-    color: #333333;
-    
+   
+    color: #333333;   
 }
-
 .advantagesExample{
     display: flex;
     flex-direction: row;
@@ -450,13 +520,11 @@ img.roomImg{
     margin-left: 2%;
     margin-right: 2%;
 }
-
 .advantagesExample4{
     margin-top: 5%;
     margin-left: 2%;
     margin-right: 2%;
 }
-
 .advantagesExampleText{
     width: 300px;
     height: 28px;
@@ -475,29 +543,228 @@ img.roomImg{
     color: #333333;
     
 }
-
 .advantagesExampleTextDescription{
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    /* or 150% */
-    
+   
     text-align: center;
-    
-    /* Серый */
-    
+   
     color: #858585;
     
     width: 300px;
     height: 72px;
 }
-/*Ответ на частые вопросы*/
+/*Менеджеры*/
+.helpBlock{
+    margin-top: 50px;
+    width: 1920px;
+}
+.managerBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 700px;
+
+    z-index:10;
+}
+.managerFon{
+    z-index: 2;
+    height: 820px;
+    width: 1000px;
+    margin-right: 400px;
+}
+.managerFon2{
+    z-index: 1;
+    height: 820px;
+    width: 920px;
+    margin-left: 1000px;
+    margin-top: -900px;
+    margin-bottom: 18px;
+}
+.model2{
+    z-index: 3;
+    margin-left: 650px;
+    margin-top: -790px;
+    margin-bottom: 100px;
+}
+.model1{
+    z-index: 4;
+    margin-left: -650px;
+    margin-top: -790px;
+    margin-bottom: 100px;
+}
+.managerCloud1{
+    z-index: 3;
+    width: 900px;
+    height: 548px;
+    margin-top: -1750px;
+    margin-left: 1025px;
+    margin-bottom: 1190px;
+}
+.managerCloud2{
+    z-index: 4;
+    width: 1000px;
+    height: 548px;
+    margin-top: -2050px;
+    margin-left: 925px;
+    margin-bottom: 1350px;
+}
+.managerCloud3{
+    z-index: 5;
+    margin-top: -750px;
+    margin-left: 1460px;
+    margin-bottom: 950px;
+}
+.managerCloud4{
+    z-index: 6;
+    margin-top: -1550px;
+    margin-left: 1065px;
+    margin-bottom: 900px;
+}
+.managerCloud5{
+    z-index: 7;
+    margin-top: -1350px;
+    margin-left: 950px;
+    margin-bottom: 900px;
+}
+.managerCloud6{
+    z-index: 8;
+    margin-top: -1550px;
+    margin-left: 1377px;
+    margin-bottom: 900px;
+}
+.managerCloud7{
+    z-index: 9;
+    margin-top: -1550px;
+    margin-bottom: 800px;
+}
+.managerCloud8{
+    z-index: 8;
+    margin-top: -1650px;
+    margin-bottom: 850px;
+    margin-left: 850px;
+}
+.managerCloud9{
+    z-index: 9;
+    margin-top: -1650px;
+    margin-bottom: 750px;
+    margin-left: 900px;
+}
+.managerCloud10{
+    z-index: 10;
+    margin-top: -1650px;
+    margin-bottom: 750px;
+    margin-left: 600px;
+}
+.managerQuality{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;  
+}
+.manager1{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    position: relative;
+
+    width: 250px;
+    height: 176px;
+}
+.manager2{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 250px;
+    height: 176px;
+    
+}
+.managerQuestion{
+    display: flex;
+    flex-direction: column;
+}
+.managerName{
+    width: 200px;
+    height: 56px;
+    
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 28px;
+    
+    color: #333333;
+    
+}
+
+.managerText{
+    width: 200px;
+    height: 88px;
+    left: 510px;
+    top: 3388px;
+    
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    
+    color: #858585;  
+}
+.managerQuestion{
+    display: flex;
+    flex-direction: column;
+}
+.managerQuestionTitle{
+    width: 491px;
+    height: 244px;
+    margin-left: 400px;
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 61px;
+    
+    text-align: right;
+    
+    color: #333333;  
+}
+.managerButton{
+    width: 348px;
+    height: 75px;
+    margin-left: 500px;
+    
+    background: linear-gradient(180deg, #1F9F8E 0%, #24B6A2 100%);
+    box-shadow: 0px 30px 35px -30px #1F9F8E, 0px 3px 0px #1B8577, inset 0px -2px 8px rgba(151, 249, 236, 0.25);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+    
+    text-shadow: 0px 1px 0px #1B8577;
+}
+/*<!--для чего нужны-->*/
 .faq {
     width: 100%;
     max-width: 1200px;
-    margin: 150px auto
+    margin: auto;
 }
 .faqTitle, .faqTitleText {
     font-family: 'Cormorant';
