@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" media="screen" type="text/css" href="colorpicker/css/colorpicker.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+    <script type="text/javascript" src="colorpicker/js/jquery.js"></script>
+	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+    <script type="text/javascript" src="colorpicker/js/eye.js"></script>
+    <script type="text/javascript" src="colorpicker/js/utils.js"></script>
+    <script type="text/javascript" src="colorpicker/js/layout.js?ver=1.0.2"></script>
+    <title>Panel</title>
+</head>
+<body>
+    <div class="style-switcher">
+        <div class="top-block-switch" id="top-block-switch">
+            <!-- Картинка точечной настройки -->
+            <div class="personal-settings" id="personal-settings">
+                <svg width="200px" height="200px" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" stroke-width="0.00058">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.23199999999999998"/>
+                    <g id="SVGRepo_iconCarrier">
+                        <defs>
+                            <filter id="a" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+                                <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                    
+                                <feMerge>
+                                    <feMergeNode in="shadowMatrixOuter1"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path fill-rule="evenodd" d="M31.171 34h-11.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h11.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2h1.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-1.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2zm-3.341-5h10.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-10.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2h-2.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h2.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2zm3.341-9h-11.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h11.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2h1.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-1.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2zm2.829 2c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm-9 5c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zm9 9c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" filter="url(#a)"/>
+                    </g>   
+                </svg>
+            </div>
+        </div>
+        <!-- Всплывающая подсказка -->
+        <div class="tooltip" id="tooltip">
+            <div class="tooltip__wrapper">
+                <h2 class="personal-settings__title" id="personal-settings__title">Точная настройка</h2>
+                <p class="personal-settings__text">
+                    Управляйте настройками из публичной части. Выбирайте внешний вид элементов и разделов, включайте, отключайте и передвигайте блоки. 
+                    Изменяйте дизайн сайта в 1 клик.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-window">
+        <!-- Левый блок меню -->
+        <div class="left-block" id="left-block">
+            <!-- Название блока в меню -->
+            <div class="left-block-title">
+                <svg width="50px" height="50px" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" stroke-width="0.00058">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.23199999999999998"/>
+                    <g id="SVGRepo_iconCarrier">
+                        <defs>
+                            <filter id="a" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+                                <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                    
+                                <feMerge>
+                                    <feMergeNode in="shadowMatrixOuter1"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path fill-rule="evenodd" d="M31.171 34h-11.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h11.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2h1.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-1.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2zm-3.341-5h10.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-10.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2h-2.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h2.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2zm3.341-9h-11.179c-.536 0-.992.448-.992 1 0 .556.444 1 .992 1h11.179c.412 1.165 1.523 2 2.829 2 1.306 0 2.417-.835 2.829-2h1.179c.536 0 .992-.448.992-1 0-.556-.444-1-.992-1h-1.179c-.412-1.165-1.523-2-2.829-2-1.306 0-2.417.835-2.829 2zm2.829 2c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm-9 5c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zm9 9c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" filter="url(#a)"/>
+                    </g>   
+                </svg>
+                <h2 class="left-block-title-text">Точные настройки</h2>
+            </div>
+            <!-- Список категорий в меню -->
+            <div class="left-block-menu">
+                <div class="left-block-menu-item" id="menu-item-general">
+                    <div class="dot-general" id="dot-general">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Общие</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-main">
+                    <div class="dot-main" id="dot-main">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Главная</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-header">
+                    <div class="dot-header" id="dot-header">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Шапка</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-top">
+                    <div class="dot-top" id="dot-top">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Верхнее меню</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-region">
+                    <div class="dot-region" id="dot-region">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Регионы</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-catalog">
+                    <div class="dot-catalog" id="dot-catalog">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Каталог</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-basket">
+                    <div class="dot-basket" id="dot-basket">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Корзина</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-sections">
+                    <div class="dot-sections" id="dot-sections">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Разделы</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-footer">
+                    <div class="dot-footer" id="dot-footer">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Футер</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-banners">
+                    <div class="dot-banners" id="dot-banners">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Баннеры</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-mobile">
+                    <div class="dot-mobile" id="dot-mobile">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Мобильная версия</span>
+                </div>
+                <div class="left-block-menu-item" id="menu-item-lk">
+                    <div class="dot-lk" id="dot-lk">
+                        <svg width="7px" height="14px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="#2935db" stroke="#2935db">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.64"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="15" cy="15" r="12"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu-item-title">Личный кабинет</span>
+                </div>
+            </div>
+        </div>
+        <!-- Правый блок меню с выводом содержимого -->
+        <div class="right-block" id="right-block">
+            <div class="right-block-container" id="right-block-container">
+                <div class="right-block-general" id="right-block-general">
+                    <div class="colorBlock right-block-general-colorBlock">
+                        <div class="colorBase-general">
+                            <h5>БАЗОВЫЙ ЦВЕТ</h5>        
+                            <input type="button" class="cl_btn active" id="cl_btn-1" style="background-color:rgb(161, 3, 3); margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-2" style="background-color:rgb(128, 0, 43); margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-3" style="background-color:red; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-4" style="background-color:yellow; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-5" style="background-color:orange; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <br>
+                            <input type="button" class="cl_btn" id="cl_btn-6" style="background-color:purple; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-7" style="background-color:blue; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-8" style="background-color:rgb(0, 162, 255); margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-9" style="background-color:green; margin: 8px;" onclick="chooseCl_btn(this.id)">
+                            <input type="button" class="cl_btn" id="cl_btn-10" style="background-color:rgb(83, 247, 118); margin: 8px;" onclick="chooseCl_btn(this.id)">
+                        </div>
+                        <div class="colorNew-general">
+                            <h5>СВОЙ ВАРИАНТ</h5>
+                            <p class="colorpickerHolder" id="colorpickerHolder"></p>
+                        </div>
+                    </div>
+                    <div class="decoration-general">
+                        <div class="decoration-general-content">
+                            <h5 class="decoration-general-title">ОФОРМЛЕНИЕ</h5>
+                            <button class="btn btn-decoration active" id="btn-decoration-1" onclick = "chooseBtn(this);">Классическое</button>
+                            <button class="btn btn-decoration" id="btn-decoration-2" onclick = "chooseBtn(this);">Светлое</button>
+                            <button class="btn btn-decoration" id="btn-decoration-3" onclick = "chooseBtn(this);">Темное</button>
+                        </div>
+                    </div>
+                
+                    <div class="screen-general">
+                        <div class="screen-general-content">
+                            <h5 class="screen-general-title">ШИРИНА ЭКРАНА</h5>
+                            <button class="btn btn-screen active" id="btn-screen-1" onclick = "chooseBtn(this);">1700 px</button>
+                            <button class="btn btn-screen" id="btn-screen-2" onclick = "chooseBtn(this);">1500 px</button>
+                            <button class="btn btn-screen" id="btn-screen-3" onclick = "chooseBtn(this);">1348 px</button>
+                            <button class="btn btn-screen" id="btn-screen-4" onclick = "chooseBtn(this);">1200 px</button>
+                        </div>
+                    </div>
+
+                    <div class="font-general">
+                        <div class="font-general-content">
+                            <h5 class="font-general-title">ШРИФТ</h5>
+                            <div class="font_container">
+                                <p>Open Sans</p>
+                                <button class="btn btn-font active" id="btn-font(1)-1" onclick = "chooseBtn(this);">15 px</button>
+                                <button class="btn btn-font" id="btn-font(1)-2" onclick = "chooseBtn(this);">14 px</button>
+                                <button class="btn btn-font" id="btn-font(1)-3" onclick = "chooseBtn(this);">13 px</button>
+                            </div>
+                            <div class="font_container">
+                                <p>PT Sans</p>
+                                <button class="btn btn-font" id="btn-font(2)-1" onclick = "chooseBtn(this);">15 px</button>
+                                <button class="btn btn-font" id="btn-font(2)-2" onclick = "chooseBtn(this);">14 px</button>
+                                <button class="btn btn-font" id="btn-font(2)-3" onclick = "chooseBtn(this);">13 px</button>
+                            </div>
+                            <div class="font_container">
+                                <p>Ubuntu</p>
+                                <button class="btn btn-font" id="btn-font(3)-1" onclick = "chooseBtn(this);">15 px</button>
+                                <button class="btn btn-font" id="btn-font(3)-2" onclick = "chooseBtn(this);">14 px</button>
+                                <button class="btn btn-font" id="btn-font(3)-3" onclick = "chooseBtn(this);">13 px</button>
+                            </div>
+                            <div class="font_container">
+                                <p>Montserrat</p>
+                                <button class="btn btn-font" id="btn-font(4)-1" onclick = "chooseBtn(this);">15 px</button>
+                                <button class="btn btn-font" id="btn-font(4)-2" onclick = "chooseBtn(this);">14 px</button>
+                                <button class="btn btn-font" id="btn-font(4)-3" onclick = "chooseBtn(this);">13 px</button>
+                            </div>
+                            <p style="margin-top: 10px;">
+                                <a href="" class="faq">Как загрузить свой шрифт?</a>
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="levelIn-general">
+                        <div class="levelIn-general-content">
+                            <h5 class="levelIn-general-title">УРОВЕНЬ ВЛОЖЕННОСТИ МЕНЮ</h5>
+                            <button class="b_pic btn-level active" id="b-pic-1" onclick = "chooseBtn(this);"><img src="img/lv2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-level" id="b-pic-2" onclick = "chooseBtn(this);"><img src="img/lv3.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-level" id="b-pic-3" onclick = "chooseBtn(this);"><img src="img/lv4.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="internal-menu-general">
+                        <div class="internal-menu-general-content">
+                            <h5 class="internal-menu-title">ВНУТРЕННЕЕ МЕНЮ</h5>
+                            <button class="b_pic btn-intern active" id="b-pic-left-1" onclick = "chooseBtn(this);"><img src="img/mnl.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-intern" id="b-pic-right-2" onclick = "chooseBtn(this);"><img src="img/mnr.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="composition-general">
+                        <div class="composition-general-content">
+                            <h5 class="composition-general-title">СОСТАВ ВНУТРЕННЕГО МЕНЮ</h5>
+                            <div calss="menu-composition-container">
+                                <button class="btn btn-comp active" id="b-comp-1" onclick = "chooseBtn(this);">Полный</button>
+                                <button class="btn btn-comp" id="b-comp-2" onclick = "chooseBtn(this);">Фильтр, каталог, баннер, подписка, новости, статьи</button>
+                                <br>
+                                <button class="btn btn-comp" id="b-comp-3" onclick = "chooseBtn(this);">Фльтр, баннеры</button>
+                                <button class="btn btn-comp" id="b-comp-4" onclick = "chooseBtn(this);">Фильтр, баннер, подписка, статьи</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-on-title-general">
+                        <div class="search-on-title-general-content">
+                            <h5 class="search-on-title-general-title">ПОИСК ПО ЗАГОЛОВКАМ</h5>
+                            <button class="b_pic btn-srch active" id="b-srch-1" onclick = "chooseBtn(this);"><img src="img/hef.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-srch" id="b-srch-2" onclick = "chooseBtn(this);"><img src="img/heu.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="views-buttons-generals">
+                        <div class="views-buttons-generals-content">
+                            <h5 class="views-buttons-generals-title">ВИД КНОПОК</h5>
+                            <button class="b_pic btn-views active" id="btn-views-1" onclick = "chooseBtn(this);"><img src="img/bre.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-views" id="btn-views-2" onclick = "chooseBtn(this);"><img src="img/bci.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="text-buttons-general">
+                        <div class="text-buttons-general-content">
+                            <h5 class="text-buttons-general-title">ТЕКСТ КНОПОК</h5>
+                            <button class="b_pic btn-text active" id="btn-text-1" onclick = "chooseBtn(this);"><img src="img/tbb.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-text" id="btn-text-2" onclick = "chooseBtn(this);"><img src="img/tbl.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="close-bell-general">
+                        <div class="close-bell-general-content">
+                            <h5 class="close-bell-general-title">ОТОБРАЖАТЬ БЛОК "ЗАКАЗАТЬ ЗВОНОК"</h5>
+                            <button class="btn btn-bell active" id="btn-bell-1" onclick = "chooseBtn(this);">В шапке</button>
+                            <button class="btn btn-bell" id="btn-bell-2" onclick = "chooseBtn(this);">В футере</button>
+                            <button class="btn btn-bell" id="btn-bell-3" onclick = "chooseBtn(this);">В боковых иконках</button>
+                            <button class="btn btn-bell" id="btn-bell-4" onclick = "chooseBtn(this);">Во внутреннем меню</button>
+                        </div>
+                    </div>
+                
+                    <div class="quetion-general">
+                        <div class="quetion-general-content">
+                            <h5 class="quetion-general-title">ОТОБРАЖАТЬ БЛОК "ЗАДАТЬ ВОПРОС"</h5>
+                            <button class="btn btn-que active" id="btn-que-1" onclick = "chooseBtn(this);">В боковых иконках</button>
+                            <button class="btn btn-que" id="btn-que-2" onclick = "chooseBtn(this);">Во внутреннем меню</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback-general">
+                        <div class="feedback-general-content">
+                            <h5 class="feedback-general-title">ОТОБРАЖАТЬ БЛОК "ОСТАВИТЬ ОТЗЫВ"</h5>
+                            <button class="btn btn-fb active" id="btn-fb-1" onclick = "chooseBtn(this);">В боковых иконках</button>
+                            <button class="btn btn-fb" id="btn-fb-2" onclick = "chooseBtn(this);">Во внутреннем меню</button>
+                        </div>
+                    </div>
+                
+                    <div class="castom-title-navigation-general">
+                        <div class="castom-title-navigation-general-content">
+                            <h5 class="castom-title-navigation-general-title">ОФОРМЛЕНИЕ ЗАГОЛОВКА И НАВИГАЦИОННОЙ ЦЕПОЧКИ</h5>
+                            <button class="b_pic btn-c-t-nav active" id="btn-c-t-nav-1" onclick = "chooseBtn(this);"><img src="img/gp1.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-c-t-nav" id="btn-c-t-nav-2" onclick = "chooseBtn(this);"><img src="img/gp2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-c-t-nav" id="btn-c-t-nav-3" onclick = "chooseBtn(this);"><img src="img/wp11.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-c-t-nav" id="btn-c-t-nav-4" onclick = "chooseBtn(this);"><img src="img/wp2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="position-castom-title-navigation-general">
+                        <div class="position-castom-title-navigation-general-content">
+                            <h5 class="position-castom-title-navigation-general-title">РАСПОЛОЖЕНИЕ ЗАГОЛОВКА И НАВИГАЦИОННОЙ ЦЕПОЧКИ</h5>
+                            <button class="b_pic btn-p-c-nav active" id="btn-p-c-nav-1" onclick = "chooseBtn(this);"><img src="img/leftn.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-p-c-nav" id="btn-p-c-nav-2" onclick = "chooseBtn(this);"><img src="img/centern.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="style-title-general">
+                        <div class="style-title-general-content">
+                            <h5 class="style-title-general-title">СТИЛЬ ЗАГОЛОВКОВ</h5>
+                            <button class="b_pic btn-st-t active" id="btn-st-t-1" onclick = "chooseBtn(this);"><img src="img/bold.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-st-t" id="btn-st-t-2" onclick = "chooseBtn(this);"><img src="img/medium.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-st-t" id="btn-st-t-3" onclick = "chooseBtn(this);"><img src="img/normal.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="position-collum-general">
+                        <div class="position-collum-general-content">
+                            <h5 class="position-collum-general-title">ПОЛОЖЕНИЕ БОКОВОЙ КОЛОНКИ ПРИ ПРОКРУЧИВАНИИ СТРАНИЦЫ</h5>
+                            <button class="b_pic btn-pos-col active" id="btn-pos-col-1" onclick = "chooseBtn(this);"><img src="img/static.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-pos-col" id="btn-pos-col-2" onclick = "chooseBtn(this);"><img src="img/flex.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="personal-data-general">
+                        <div class="personal-data-general-content">
+                            <h5 class="personal-data-general-title" info="Если опция включена, во всех формах обратной связи и на странице оформления заказа появится обязательная галочка с текстом из настроек. В этом случае посетитель не сможет отправить сообщение через веб-форму, пока не примет пользовательское соглашение.">ИНФОРМИРОВАНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="per-data">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                
+                    <div class="public-general">
+                        <div class="public-general-content">
+                            <h5 class="public-general-title">ВАШ ИНТЕРНЕТ-МАГАЗИН РАБОТАЕТ ПО ПУБЛИЧНОЙ ОФЕРТЕ?</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="public">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                
+                    <div class="type-hover-picture-general">
+                        <div class="type-hover-picture-general-content">
+                            <h5 class="type-hover-picture-general-title">ТИП НАВЕДЕНИЯ НА КАРТИНКИ</h5>
+                            <button class="b_pic btn-t-hov-pic active" id="btn-t-hov-pic-1" onclick = "chooseBtn(this);"><img src="img/flesh.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-t-hov-pic" id="btn-t-hov-pic-2" onclick = "chooseBtn(this);"><img src="img/mig.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-t-hov-pic" id="btn-t-hov-pic-3" onclick = "chooseBtn(this);"><img src="img/notan.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="hover-menu-general">
+                        <div class="hover-menu-general-content">
+                            <h5 class="hover-menu-general-title">ЗАТЕМНЯТЬ ФОН ПРИ НАВЕДЕНИИ НА МЕНЮ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="hov-menu">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                
+                    <div class="id-scroll-general">
+                        <div class="id-scroll-general-content">
+                            <h5 class="id-scroll-general-title">ИНДИКАТОР ПРОКРУТКИ СТРАНИЦЫ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="id-scroll">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-main" id="right-block-main">
+
+                    <div class="main-general">
+                        <div class="main-general-content">
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">1</span>
+                                    <span>С боковой колонкой</span>
+                                </div>
+                                <input class="check_box" type="checkbox"><span>Фон</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">2</span>
+                                    <span>Большие баннеры</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">3</span>
+                                    <span>Тизеры</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">4</span>
+                                    <span>Разделы катаога</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">5</span>
+                                    <span>Элементы каталога</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">6</span>
+                                    <span>Товар дня</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">7</span>
+                                    <span>Баннеры с текстом</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">8</span>
+                                    <span>Акции</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">9</span>
+                                    <span>Новости</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">10</span>
+                                    <span>Баннеры с картинками</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">11</span>
+                                    <span>Коллекции</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">12</span>
+                                    <span>Образы</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">13</span>
+                                    <span>Истории</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">14</span>
+                                    <span>Отзывы</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">15</span>
+                                    <span>Баннеры с фоном</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">16</span>
+                                    <span>Блог</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">17</span>
+                                    <span>Карта</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">18</span>
+                                    <span>Блок о компании</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">19</span>
+                                    <span>Блок ВКонтакте</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">20</span>
+                                    <span>Бренды</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="main_card" id="with-side-column">
+                                <div>
+                                    <span style="padding: 10px;">21</span>
+                                    <span>Виджет соц сетей</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="with-col">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-header" id="right-block-header">
+
+                    <div class="fix-head-general">
+                        <div class="fix-head-general-content">
+                            <h5 class="fix-head-general-title">ФИКСИРОВАННАЯ ШАПКА САЙТА</h5>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" id="fix-head">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="head_type">
+                                <div class="card_head" id="card-f-1">
+                                    <span style="padding: 15px;">1</span>
+                                    <img src="img/fix_head_1.png">
+                                </div>
+                            </div>
+
+                            <div class="head_type">
+                                <div class="card_head" id="card-f-2">
+                                    <span style="padding: 15px;">2</span>
+                                    <img src="img/fix_head_2.png">
+                                </div>
+                            </div>
+
+                            <div class="head_type">
+                                <div class="card_head" id="card-f-3">
+                                    <span style="padding: 15px;">3</span>
+                                    <img src="img/fix_head_3.png">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="types-head-general">
+                            <div class="types-head-general-content">
+                                <h5 class="types-head-general-title">ВАРИАНТЫ ШАПОК</h5>
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-1">
+                                        <div class="al">
+                                            <span style="padding: 15px;">1</span>
+                                            <img src="img/head_type_1.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-1">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-2">
+                                        <div class="al">
+                                            <span style="padding: 15px;">2</span>
+                                            <img src="img/head_type_2.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-2">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-2">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-3">
+                                        <div class="al">
+                                            <span style="padding: 15px;">3</span>
+                                            <img src="img/head_type_3.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-3">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-4">
+                                        <div class="al">
+                                            <span style="padding: 15px;">4</span>
+                                            <img src="img/head_type_4.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-4">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-4">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-5">
+                                        <div class="al">
+                                            <span style="padding: 15px;">5</span>
+                                            <img src="img/head_type_5.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-5">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-5">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-6">
+                                        <div class="al">
+                                            <span style="padding: 15px;">6</span>
+                                            <img src="img/head_type_6.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-6">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-7">
+                                        <div class="al">
+                                            <span style="padding: 15px;">7</span>
+                                            <img src="img/head_type_7.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-7">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-7">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-7">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-8">
+                                        <div class="al">
+                                            <span style="padding: 15px;">8</span>
+                                            <img src="img/head_type_8.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-8">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-8">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-9">
+                                        <div class="al">
+                                            <span style="padding: 15px;">9</span>
+                                            <img src="img/head_type_9.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-9">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-10">
+                                        <div class="al">
+                                            <span style="padding: 15px;">10</span>
+                                            <img src="img/head_type_10.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-10">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-10">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-11">
+                                        <div class="al">
+                                            <span style="padding: 15px;">11</span>
+                                            <img src="img/head_type_11.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-11">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-12">
+                                        <div class="al">
+                                            <span style="padding: 15px;">12</span>
+                                            <img src="img/head_type_12.png">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-13">
+                                        <div class="al">
+                                            <span style="padding: 15px;">13</span>
+                                            <img src="img/head_type_13.png">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-14">
+                                        <div class="al">
+                                            <span style="padding: 15px;">14</span>
+                                            <img src="img/head_type_14.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-14">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-15">
+                                        <div class="al">
+                                            <span style="padding: 15px;">15</span>
+                                            <img src="img/head_type_15.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-15">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-16">
+                                        <div class="al">
+                                            <span style="padding: 15px;">16</span>
+                                            <img src="img/head_type_16.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-16">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-16">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-17">
+                                        <div class="al">
+                                            <span style="padding: 15px;">17</span>
+                                            <img src="img/head_type_17.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-17">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-17">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-18">
+                                        <div class="al">
+                                            <span style="padding: 15px;">18</span>
+                                            <img src="img/head_type_18.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-18">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-18">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-19">
+                                        <div class="al">
+                                            <span style="padding: 15px;">19</span>
+                                            <img src="img/head_type_19.png">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-20">
+                                        <div class="al">
+                                            <span style="padding: 15px;">20</span>
+                                            <img src="img/head_type_20.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-20">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-21">
+                                        <div class="al">
+                                            <span style="padding: 15px;">21</span>
+                                            <img src="img/head_type_21.png">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-22">
+                                        <div class="al">
+                                            <span style="padding: 15px;">22</span>
+                                            <img src="img/head_type_22.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-22">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-22">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-23">
+                                        <div class="al">
+                                            <span style="padding: 15px;">23</span>
+                                            <img src="img/head_type_23.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-23">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-24">
+                                        <div class="al">
+                                            <span style="padding: 15px;">24</span>
+                                            <img src="img/head_type_24.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-top-24">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный верх для баннера с наездом</span>
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-24">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-25">
+                                        <div class="al">
+                                            <span style="padding: 15px;">25</span>
+                                            <img src="img/head_type_25.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-25">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-26">
+                                        <div class="al">
+                                            <span style="padding: 15px;">26</span>
+                                            <img src="img/head_type_26.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="sections-26">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">В меню только разделы каталога</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-27">
+                                        <div class="al">
+                                            <span style="padding: 15px;">27</span>
+                                            <img src="img/head_type_27.png">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header" id="card-head-type-28">
+                                        <div class="al">
+                                            <span style="padding: 15px;">28</span>
+                                            <img src="img/head_type_28.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-28">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="head_type">
+                                    <div class="card-block-header2" id="card-head-type-29">
+                                        <div class="al">
+                                            <span style="padding: 15px;">29</span>
+                                            <img src="img/head_type_29.png">
+                                        </div>
+                                        <div class="al pad_header">
+                                            <label class="switch">
+                                                <input type="checkbox" id="transparent-search-29">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="padding: 10px;">Прозрачный поиск в шапке для баннера с наездом</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-top" id="right-block-top">
+
+                    <div class="type-menu-general">
+                        <div class="type-menu-general-content">
+                            <h5 class="type-menu-general-title">ТИП МЕНЮ</h5>
+                            <button class="btn btn-t-menu active" id="btn-t-menu-1" onclick = "chooseBtn(this);">Разделы и подразделы</button>
+                            <button class="btn btn-t-menu" id="btn-t-menu-2" onclick = "chooseBtn(this);">Разделы</button>
+                            <button class="btn btn-t-menu" id="btn-t-menu-3" onclick = "chooseBtn(this);">Большое</button>
+                        </div>
+                    </div>
+                
+                    <div class="show-right-general">
+                        <div class="show-right-general-content">
+                            <h5 class="show-right-general-title">ОТОБРАЖАТЬ ПРАВУЮ ЧАСТЬ</h5>
+                            <div style="margin-bottom: 10px;">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <button class="btn btn-show-r active" id="btn-show-r-1" onclick = "chooseBtn(this);">Баннер</button>
+                            <button class="btn btn-show-r" id="btn-show-r-2" onclick = "chooseBtn(this);">Бренды</button>
+                        </div>
+                    </div>
+                
+                    <div class="color-menu-general">
+                        <div class="color-menu-general-content">
+                            <h5 class="color-menu-general-title">ЦВЕТ МЕНЮ</h5>
+                            <button class="b_pic btn-col-m active" id="btn-col-m-1" onclick = "chooseBtn(this);"><img src="img/Dark.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic  btn-col-m" id="btn-col-m-2" onclick = "chooseBtn(this);"><img src="img/Svet.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic  btn-col-m" id="btn-col-m-3" onclick = "chooseBtn(this);"><img src="img/MultyCol.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic  btn-col-m" id="btn-col-m-4" onclick = "chooseBtn(this);"><img src="img/Proz.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="menu-lowercase-general">
+                        <div class="menu-lowercase-general-content">
+                            <h5 class="menu-lowercase-general-title">МЕНЮ В НИЖНЕМ РЕГИСТРЕ</h5>
+                            <button class="btn btn-menu-low active" id="btn-menu-low-1" onclick = "chooseBtn(this);">Разделы и подразделы</button>
+                            <button class="btn btn-menu-low" id="btn-menu-low-2" onclick = "chooseBtn(this);">Разделы</button>
+                            <button class="btn btn-menu-low" id="btn-menu-low-3" onclick = "chooseBtn(this);">Большое</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-region" id="right-block-region">
+
+                    <div class="use-regions-general">
+                        <div class="use-regions-general-content">
+                            <h5 class="use-regions-general-title">ИСПОЛЬЗОВАТЬ РЕГИОНАЛЬНОСТЬ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="use-reg">
+                                <span class="slider round"></span>
+                            </label>
+                            <br>
+                            <button class="b_pic btn-reg active" id="btn-reg-1" onclick = "chooseBtn(this);"><img src="img/one_dom.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-reg" id="btn-reg-2" onclick = "chooseBtn(this);"><img src="img/dom_lv2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+                
+                    <div class="show-city-general">
+                        <div class="show-city-general-content">
+                            <h5 class="show-city-general-title" info="При входе на сайт отобразится город, определенный по IP, если он входит в группу местоположений текущего элемента региона в админке. Иначе отобразится основной город этого элемента. При выключенной опции отобразится название элемента текущего региона.">ОТОБРАЖАТЬ ГОРОД ПОСЕТИТЕЛЯ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-city">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="view-regions-general">
+                        <div class="view-regions-general-content">
+                            <h5 class="view-regions-general-title">ВИД ОТОБРАЖЕНИЯ РЕГИОНОВ</h5>
+                            <button class="b_pic btn-view-reg active" id="btn-view-reg-1" onclick = "chooseBtn(this);"><img src="img/spisok.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-view-reg" id="btn-view-reg-2" onclick = "chooseBtn(this);"><img src="img/popup.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-view-reg" id="btn-view-reg-3" onclick = "chooseBtn(this);"><img src="img/popup2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-catalog" id="right-block-catalog"></div>
+
+                <div class="right-block-basket" id="right-block-basket">
+
+                    <div class="basket-position-general">
+                        <div class="basket-position-general-content">
+                            <h5 class="basket-position-general-title">ПОЛОЖЕНИЕ КОРЗИНЫ</h5>
+                            <button class="b_pic btn-bas-pos active" id="btn-bas-pos-1" onclick = "chooseBtn(this);"><img src="img/bas_in_down.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-bas-pos" id="btn-bas-pos-2" onclick = "chooseBtn(this);"><img src="img/bas_in_head.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-bas-pos" id="btn-bas-pos-3" onclick = "chooseBtn(this);"><img src="img/bas_the_side.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="basket-color-general">
+                        <div class="basket-color-general-content">
+                            <h5 class="basket-color-general-title">ЦВЕТ КОРЗИНЫ</h5>
+                            <button class="b_pic btn-col-bas active" id=" btn-col-bas-1" onclick = "chooseBtn(this);"><img src="img/bas_col_dark.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col-bas" id=" btn-col-bas-2" onclick = "chooseBtn(this);"><img src="img/bas_col_white.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col-bas" id=" btn-col-bas-3" onclick = "chooseBtn(this);"><img src="img/bas_col_multycol.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="show-basket-all-pages-general">
+                        <div class="show-basket-all-pages-general-content">
+                            <h5 class="show-basket-all-pages-general-title" info="Если опция выключена, то блок с корзиной не будет отображаться на страницах оформления заказа и корзине. Выключение опции снизит нагрузку и увеличит скорость сайта">ОТОБРАЖАТЬ КОРЗИНУ НА ВСЕХ СТРАНИЦАХ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-bas-all-pages">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="show-basket-add-product-general">
+                        <div class="show-basket-add-product-general-content">
+                            <h5 class="show-basket-add-product-general-title">ОТОБРАЖАТЬ КОРЗИНУ ПРИ ДОБАВЛЕНИИ В НЕЁ ТОВАРА</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-bas-add-prod">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="show-button-vers-print-general">
+                        <div class="show-button-vers-print-general-content">
+                            <h5 class="show-button-vers-print-general-title">ОТОБРАЖАТЬ КНОПКУ "ВЕРСИЯ ДЛЯ ПЕЧАТИ"</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-but-vers-print">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="show-button-share-basket-general">
+                        <div class="show-button-share-basket-general-content">
+                            <h5 class="show-button-share-basket-general-title">ОТОБРАЖАТЬ КНОПКУ "ПОДЕЛИТЬСЯ КОРЗИНОЙ"</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-but-share-bas">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="show-button-load-file-general">
+                        <div class="show-button-load-file-general-content">
+                            <h5 class="show-button-load-file-general-title">ОТОБРАЖАТЬ КНОПКУ "СКАЧАТЬ ФАЙЛОМ"</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-but-load-file">
+                                <span class="slider round"></span>
+                            </label>
+                            <h5 class="type-load-file-general" style="padding-top: 10px; padding-bottom: 10px;">ТИП СКАЧИВАЕМОГО ФАЙЛА</h5>
+                            <button class="btn btn-type-f active" id="btn-type-f-1" onclick = "chooseBtn(this);">XLS</button>
+                            <button class="btn btn-type-f" id="btn-type-f-2" onclick = "chooseBtn(this);">PDF</button>
+                        </div>
+                    </div>
+
+                    <div class="abbreviated-hf-basket-order-general">
+                        <div class="abbreviated-hf-basket-order-general-content">
+                            <h5 class="abbreviated-hf-basket-order-general-title">СОКРАЩЕННАЯ ШАПКА И ФУТЕР НА СТРАНИЦАХ КОРЗИНЫ И ОФОРМЛЕНИЯ ЗАКАЗА</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="abbrev-hf-bas-ord">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="message-add-product-basket-general">
+                        <div class="message-add-product-basket-general-content">
+                            <h5 class="message-add-product-basket-general-title">УВЕДОМЛЕНИЯ О ДОБАВЛЕНИИ ТОВАРА В КОРЗИНУ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="mes-add-prod-bas">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-sections" id="right-block-sections">
+
+                    <div class="contacts-general">
+                        <div class="contacts-general-content">
+                            <h5 class="contacts-general-title">КОНТАКТЫ</h5>
+                            <button class="b_pic btn-cont active" id="btn-cont-1" onclick = "chooseBtn(this);"><img src="img/con_comp.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-cont" id="btn-cont-2" onclick = "chooseBtn(this);"><img src="img/con_reg.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="blog-general">
+                        <div class="blog-general-content">
+                            <h5 class="blog-general-title">БЛОГ</h5>
+                            <button class="b_pic btn-blog active" id="btn-blog-1" onclick = "chooseBtn(this);"><img src="img/blog_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-blog" id="btn-blog-2" onclick = "chooseBtn(this);"><img src="img/blog_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-blog" id="btn-blog-3" onclick = "chooseBtn(this);"><img src="img/blog_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="services-sections-general">
+                        <div class="services-sections-general-content">
+                            <h5 class="services-sections-general-title">УСЛУГИ - СПИСОК РАЗДЕЛОВ</h5>
+                            <button class="b_pic btn-serv-sec active" id=" btn-serv-sec-1" onclick = "chooseBtn(this);"><img src="img/blog_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-serv-sec" id=" btn-serv-sec-2" onclick = "chooseBtn(this);"><img src="img/blog_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="services-subsections-general">
+                        <div class="services-subsections-general-content">
+                            <h5 class="services-subsections-general-title">УСЛУГИ - СПИСОК ПОДРАЗДЕЛОВ</h5>
+                            <button class="b_pic btn-serv-subsec active" id="btn-serv-subsec-1" onclick = "chooseBtn(this);"><img src="img/blog_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-serv-subsec" id="btn-serv-subsec-2" onclick = "chooseBtn(this);"><img src="img/blog_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="services-elements-general">
+                        <div class="services-elements-general-content">
+                            <h5 class="services-elements-general-title">УСЛУГИ - СПИСОК ЭЛЕМЕНТОВ</h5>
+                            <button class="b_pic btn-serv-elem active" id="btn-serv-elem-1" onclick = "chooseBtn(this);"><img src="img/blog_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-serv-elem" id="btn-serv-elem-2" onclick = "chooseBtn(this);"><img src="img/blog_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="projects-general">
+                        <div class="projects-general-content">
+                            <h5 class="projects-general-title">ПРОЕКТЫ</h5>
+                            <button class="b_pic btn-proj active" id="btn-proj-1" onclick = "chooseBtn(this);"><img src="img/proj_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-proj" id="btn-proj-2" onclick = "chooseBtn(this);"><img src="img/proj_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-proj" id="btn-proj-3" onclick = "chooseBtn(this);"><img src="img/proj_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="show-up-block-projects-general">
+                        <div class="show-up-block-projects-general-content">
+                            <h5 class="show-up-block-projects-general-title">ПОКАЗЫВАТЬ ВЕРХНИЙ БЛОК РАЗДЕЛА "ПРОЕКТЫ"</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="show-up-block-proj">
+                                <span class="slider round"></span>
+                            </label>
+                            <br>
+                            <button class="btn btn-show-up-block-proj active" id="btn-show-up-block-proj-1" onclick = "chooseBtn(this);">Фильтр по годам (микс)</button>
+                            <button class="btn btn-show-up-block-proj" id="btn-show-up-block-proj-2" onclick = "chooseBtn(this);">Фильтр по годам (ссылки)</button>
+                            <br>
+                            <button class="btn btn-show-up-block-proj" id="btn-show-up-block-proj-3" onclick = "chooseBtn(this);">Фильтр по разделам (микс)</button>
+                            <button class="btn btn-show-up-block-proj" id="btn-show-up-block-proj-4" onclick = "chooseBtn(this);">Фильтр по разделам (ссылки)</button>
+                        </div>
+                    </div>
+
+                    <div class="collections-general">
+                        <div class="collections-general-content">
+                            <h5 class="collections-general-title">КОЛЛЕКЦИИ</h5>
+                            <button class="b_pic btn-col active" id="btn-col-1" onclick = "chooseBtn(this);"><img src="img/col_t1.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col" id="btn-col-2" onclick = "chooseBtn(this);"><img src="img/col_t2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col" id="btn-col-3" onclick = "chooseBtn(this);"><img src="img/col_t3.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col" id="btn-col-4" onclick = "chooseBtn(this);"><img src="img/col_t4.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-col" id="btn-col-5" onclick = "chooseBtn(this);"><img src="img/col_t5.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="images-general">
+                        <div class="images-general-content">
+                            <h5 class="images-general-title">ОБРАЗЫ</h5>
+                            <button class="b_pic btn-img active" id="btn-img-1" onclick = "chooseBtn(this);"><img src="img/ob_t1.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-img" id="btn-img-2" onclick = "chooseBtn(this);"><img src="img/ob_t2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-img" id="btn-img-3" onclick = "chooseBtn(this);"><img src="img/ob_t3.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="stocks-general">
+                        <div class="stocks-general-content">
+                            <h5 class="stocks-general-title">АКЦИИ</h5>
+                            <button class="b_pic btn-stocks active" id="btn-stocks-1" onclick = "chooseBtn(this);"><img src="img/ak_t1.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-stocks" id="btn-stocks-2" onclick = "chooseBtn(this);"><img src="img/ak_t2.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-stocks" id="btn-stocks-3" onclick = "chooseBtn(this);"><img src="img/ak_t3.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-stocks" id="btn-stocks-4" onclick = "chooseBtn(this);"><img src="img/ak_t4.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-stocks" id="btn-stocks-5" onclick = "chooseBtn(this);"><img src="img/ak_t5.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="news-general">
+                        <div class="news-general-content">
+                            <h5 class="news-general-title">НОВОСТИ</h5>
+                            <button class="b_pic btn-news active" id="btn-news-1" onclick = "chooseBtn(this);"><img src="img/news_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-news" id="btn-news-2" onclick = "chooseBtn(this);"><img src="img/news_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-news" id="btn-news-3" onclick = "chooseBtn(this);"><img src="img/news_plit.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="employes-general">
+                        <div class="employes-general-content">
+                            <h5 class="employes-general-title">НАШИ СОТРУДНИКИ</h5>
+                            <button class="b_pic btn-empl active" id="btn-empl-1" onclick = "chooseBtn(this);"><img src="img/empl_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-empl" id="btn-empl-2" onclick = "chooseBtn(this);"><img src="img/empl_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="brends-general">
+                        <div class="brends-general-content">
+                            <h5 class="brends-general-title">БРЕНДЫ</h5>
+                            <button class="b_pic btn-brends active" id="btn-brends-1" onclick = "chooseBtn(this);"><img src="img/brends_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends" id="btn-brends-2" onclick = "chooseBtn(this);"><img src="img/brends_group.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends" id="btn-brends-3" onclick = "chooseBtn(this);"><img src="img/brends_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends" id="btn-brends-4" onclick = "chooseBtn(this);"><img src="img/bredns_logo.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="brends-detail-general">
+                        <div class="brends-detail-general-content">
+                            <h5 class="brends-detail-general-title">БРЕНДЫ - ДЕТАЛЬНАЯ</h5>
+                            <button class="b_pic btn-brends-det active" id="btn-brends-det-1" onclick = "chooseBtn(this);"><img src="img/br_det_sec_and_pr.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends-det" id="btn-brends-det-2" onclick = "chooseBtn(this);"><img src="img/br_det_prod.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends-det" id="btn-brends-det-3" onclick = "chooseBtn(this);"><img src="img/br_det_st_cat.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-brends-det" id="btn-brends-det-4" onclick = "chooseBtn(this);"><img src="img/br_det_sec.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="partners-general">
+                        <div class="partners-general-content">
+                            <h5 class="partners-general-title">ПАРТНЕРЫ</h5>
+                            <button class="b_pic btn-part active" id="btn-part-1" onclick = "chooseBtn(this);"><img src="img/brends_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-part" id="btn-part-2" onclick = "chooseBtn(this);"><img src="img/brends_group.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-part" id="btn-part-3" onclick = "chooseBtn(this);"><img src="img/brends_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="vacancy-general">
+                        <div class="vacancy-general-content">
+                            <h5 class="vacancy-general-title">ВАКАНСИИ</h5>
+                            <button class="b_pic btn-vac active" id="btn-vac-1" onclick = "chooseBtn(this);"><img src="img/vac_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-vac" id="btn-vac-2" onclick = "chooseBtn(this);"><img src="img/vac_ac.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="licenses-general">
+                        <div class="licenses-general-content">
+                            <h5 class="licenses-general-title">ЛИЦЕНЗИИ</h5>
+                            <button class="b_pic btn-lice active" id="btn-lice-1" onclick = "chooseBtn(this);"><img src="img/lic_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-lice" id="btn-lice-2" onclick = "chooseBtn(this);"><img src="img/lic_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="documents-general">
+                        <div class="documents-general-content">
+                            <h5 class="documents-general-title">ДОКУМЕНТЫ</h5>
+                            <button class="b_pic btn-doc active" id="btn-doc-1" onclick = "chooseBtn(this);"><img src="img/doc_block.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                            <button class="b_pic btn-doc" id="btn-doc-2" onclick = "chooseBtn(this);"><img src="img/doc_spis.png" style="vertical-align:middle; border-radius: 10px;"></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-footer" id="right-block-footer">
+
+                    <div class="type-footer-general">
+                        <div class="type-footer-general-content">
+                            <h5 class="type-footer-general-title">ТИП ФУТЕРА</h5>
+                            <div>
+                                <div class="footer_type" id="foot-type-1">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">1</span>
+                                        <img src="img/01.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-2">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">2</span>
+                                        <img src="img/02.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-3">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">3</span>
+                                        <img src="img/03.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-4">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">4</span>
+                                        <img src="img/04.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-5">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">5</span>
+                                        <img src="img/05.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-6">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">6</span>
+                                        <img src="img/06.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-7">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">7</span>
+                                        <img src="img/07.png">
+                                    </div>
+                                </div>
+
+                                <div class="footer_type" id="foot-type-8">
+                                    <div class="card_footer">
+                                        <span style="padding: 15px;">8</span>
+                                        <img src="img/08.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="logo-developer-general">
+                        <div class="logo-developer-general-content">
+                            <h5 class="logo-developer-general-title">ЛОГОТИП РАЗРАБОТЧИКА</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="logo-dev">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="logo-partner-general">
+                        <div class="logo-partner-general-content">
+                            <h5 class="logo-partner-general-title">ЛОГОТИП ПАРТНЕРА</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="logo-part">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-block-banners" id="right-block-banners">
+
+                    <div class="position-banners-general">
+                        <div class="position-banners-general-content">
+                            <h5 class="position-banners-general-title">РАСПОЛОЖЕНИЕ РЕКЛАМНЫХ БАННЕРОВ</h5>
+                            <div class="block_banners">
+                                <div class="col">
+                                    <div class="card_banner" id="upper_head">
+                                        <span class="pad">Сверху над шапкой</span>
+                                        <div>
+                                            <img src="img/upper_head.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-1">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card_banner" id="up_under_head">
+                                        <span class="pad">Сверху под шапкой</span>
+                                        <div>
+                                            <img src="img/up_under_head.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-2">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card_banner" id="in_side">
+                                        <span class="pad">Боковая</span>
+                                        <div>
+                                            <img src="img/in_side.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-3">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card_banner" id="upper_content">
+                                        <span class="pad">Над контентом</span>
+                                        <div>
+                                            <img src="img/upper_content.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-4">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card_banner" id="under_content">
+                                        <span class="pad">Под контентом</span>
+                                        <div>
+                                            <img src="img/under_content.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-5">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card_banner" id="down_in_page">
+                                        <span class="pad">Внизу страницы</span>
+                                        <div>
+                                            <img src="img/down_in_page.png">
+                                        </div>
+                                        <div class="pad">
+                                            <label class="switch">
+                                                <input type="checkbox" id="pos-ban-6">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-block-mobile" id="right-block-mobile"></div>
+
+                <div class="right-block-lk" id="right-block-lk">
+
+                    <div class="initials-general">
+                        <div class="initials-general-content">
+                            <h5 class="initials-general-title">ФАМИЛИЯ ИМЯ ОТЧЕСТВО В ОДНОМ ПОЛЕ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="init">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="login-equal-email-general">
+                        <div class="login-equal-email-general-content">
+                            <h5 class="login-equal-email-general-title">ЛОГИН РАВЕН EMAIL АДРЕСУ</h5>
+                            <label class="switch">
+                                <input type="checkbox" id="log-em">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="close-block" id="close-block">
+            <svg class="close-block-icon" width="45px" height="45px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000">
+                <line x1="16" y1="16" x2="48" y2="48"/><line x1="48" y1="16" x2="16" y2="48"/>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
