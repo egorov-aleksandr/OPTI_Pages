@@ -69,7 +69,7 @@ p.newSite{
     /* Gold2 */
     color: #D3B070;
 }
-@media screen and (max-width: 1680px){
+@media screen and (max-width: 1680px) and (min-width: 800px){
     body{
         width: 100%;
         display: flex;
@@ -104,5 +104,64 @@ p.newSite{
         line-height: 43px;
         letter-spacing: 0.05em;
         color: #D3B070;
+    }
+}
+@media screen and (max-width: 800px){
+    body{
+        display: grid;
+        grid-template-columns: 170px auto;
+        justify-content: normal;
+        align-items: normal;
+    }
+    .leftBlock{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        background-color: black;
+    
+        width: 170px;
+        height: auto;
+        z-index: 0;
+    }
+    .leftBlock__text{
+        width: 149px;
+        height: 136.87px;
+        font-family: 'Gothic A1', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 26px;
+        color: #D3B070;
+        border-top: 2px solid #D3B070;
+        border-bottom: 2px solid #D3B070;
+        padding-top: 9.8px;
+    }
+    img.iconImg{
+        margin-top: 51px;
+        margin-left: 144px;
+    }
+    .rightBlock{
+        position: relative;
+        z-index: 1;
+        width: 482px;
+        height: 493px;
+    }
+    img.photo{
+        width: 358px;
+        height: 340px;
+        margin-top: 104px;
+    }
+    p.newSite{
+        margin-left: 12px;
+        font-family: 'Gothic A1', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #D3B070;
+        margin-top: -103px;
     }
 }
