@@ -139,9 +139,8 @@ p.newSite{
         padding-top: 9.8px;
     }
     img.iconImg{
-        width: 292px;
-        height: 290px;
-        margin-top: 134px;
+        margin-top: 51px;
+        margin-left: 144px;
     }
     .rightBlock{
         position: relative;
@@ -150,9 +149,9 @@ p.newSite{
         height: 493px;
     }
     img.photo{
-        width: 358px;
-        height: 340px;
-        margin-top: 104px;
+        width: 292px;
+        height: 290px;
+        margin-top: 131px;
     }
     p.newSite{
         margin-left: 35px;
