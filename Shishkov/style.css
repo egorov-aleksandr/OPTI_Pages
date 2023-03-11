@@ -139,8 +139,9 @@ p.newSite{
         padding-top: 9.8px;
     }
     img.iconImg{
-        margin-top: 51px;
-        margin-left: 144px;
+        width: 292px;
+        height: 290px;
+        margin-top: 134px;
     }
     .rightBlock{
         position: relative;
@@ -154,7 +155,7 @@ p.newSite{
         margin-top: 104px;
     }
     p.newSite{
-        margin-left: 12px;
+        margin-left: 35px;
         font-family: 'Gothic A1', sans-serif;
         font-style: normal;
         font-weight: 700;
@@ -162,6 +163,7 @@ p.newSite{
         line-height: 20px;
         letter-spacing: 0.05em;
         color: #D3B070;
-        margin-top: -103px;
+        margin-top: -114px;
+        width: 229px;
     }
 }
