@@ -113,17 +113,17 @@ p.newSite{
         align-items: center;
         background-color: black;
         overflow-x: hidden;
-        padding-top: 50%;
+        margin-top: 45%;
     }
     .leftBlock{
-            position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    width: 170px;
-    height: 100%;
-    z-index: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        width: 170px;
+        height: 100%;
+        z-index: 0;
     }
     .leftBlock__text{
         width: 100px;
@@ -147,17 +147,17 @@ p.newSite{
         width: 300px;
     }
     .rightBlock{
-        position: relative;
-        z-index: 1;
-        width: 482px;
-        height: 100%;
+    position: relative;
+    z-index: 1;
+    width: 482px;
+    height: 100%;
     }
     img.photo{
-        width: 290px;
-        height: 236px;
+        width: 100%;
+    height: auto;
     }
     p.newSite{
-        margin-left: 0px;
+        margin-left: 92px;
         font-family: 'Gothic A1', sans-serif;
         font-style: normal;
         font-weight: 700;
