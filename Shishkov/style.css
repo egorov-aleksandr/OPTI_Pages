@@ -154,7 +154,6 @@ p.newSite{
         width: 482px;
         height: 100%;
         margin-left: 2%;
-        text-align: center;
     }
     img.photo{
         margin-top: 77px;
@@ -162,7 +161,7 @@ p.newSite{
     height: auto;
     }
     p.newSite{
-        margin-left: 3vh;
+        margin-left: 6vh;
         font-family: 'Gothic A1', sans-serif;
         font-style: normal;
         font-weight: 700;
