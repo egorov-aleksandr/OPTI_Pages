@@ -149,10 +149,11 @@ p.newSite{
         width: 300px;
     }
     .rightBlock{
-    position: relative;
-    z-index: 1;
-    width: 482px;
-    height: 100%;
+        position: relative;
+        z-index: 1;
+        width: 482px;
+        height: 100%;
+        margin-left: 2%;
     }
     img.photo{
         margin-top: 77px;
@@ -160,7 +161,7 @@ p.newSite{
     height: auto;
     }
     p.newSite{
-        margin-left: 6px;
+        margin-left: 7%;
         font-family: 'Gothic A1', sans-serif;
         font-style: normal;
         font-weight: 700;
