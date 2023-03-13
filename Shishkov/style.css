@@ -154,6 +154,7 @@ p.newSite{
         width: 482px;
         height: 100%;
         margin-left: 2%;
+        text-align: center;
     }
     img.photo{
         margin-top: 77px;
