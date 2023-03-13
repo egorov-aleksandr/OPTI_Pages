@@ -1,3 +1,17 @@
+window.onload = function(){
+    let lidform = document.querySelectorAll(".radio-control, .radio-control-color");
+lidform.forEach(elem => {
+        elem.addEventListener("mouseover", openBorder);
+        elem.addEventListener("mouseout", closeBorder);
+    });
+
+    let linkPoint = document.getElementById("link--cleaning");
+    let tool = document.getElementById("tooltip__cleaning");
+
+    linkPoint.addEventListener("mouseover", openToolTip);
+    tool.addEventListener("mouseleave", closeToolTip);
+}
+
 function showBorder1(inputId){
     let label1 = document.getElementById("radio-control_1");
     let label2 = document.getElementById("radio-control_2");
@@ -72,14 +86,6 @@ function closeBorder(element){
     }
 }
 
-window.onload = function(){
-    let lidform = document.querySelectorAll(".radio-control, .radio-control-color");
-lidform.forEach(elem => {
-        elem.addEventListener("mouseover", openBorder);
-        elem.addEventListener("mouseout", closeBorder);
-    });
-}
-
 function playVideo(butId){
     let arr = butId.split("-");
     let buttId = "playButton-" + arr[1];
@@ -112,4 +118,32 @@ function pauseVideo(vId){
     let pol = document.getElementById(polId);
     pol.style.visibility = "visible";
 
+}
+
+function openToolTip(){
+    let toolTip = document.getElementById("tooltip__cleaning");
+    toolTip.style.display = "flex";
+}
+
+function closeToolTip(){
+    let toolTip = document.getElementById("tooltip__cleaning");
+    toolTip.style.display= "none";
+}
+
+function chooseCategory(elem){
+    if (elem.checked){
+        let inputId = elem.id;
+        let catId = "detail-" + inputId;
+        let category = document.getElementById(catId);
+
+        category.style.display = "block";
+    }
+    if (!elem.checked){
+        let inputId = elem.id;
+        let catId = "detail-" + inputId;
+        let category = document.getElementById(catId);
+
+        category.style.display = "none";
+    }
+    console.log(elem);
 }

@@ -41,6 +41,9 @@ h4{
 html, body{
     height: 100%;
 }
+body{
+    overflow-x: hidden;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -56,6 +59,6 @@ html, body{
     align-items: center;
 
     background-color: #F9F3EC;
-    width: 1902px;
+    width: 1920px;
     margin: 0 auto;
 }

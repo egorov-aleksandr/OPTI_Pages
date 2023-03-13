@@ -12,18 +12,6 @@
     <script type="text/javascript" src="js/main.js"></script>
     <!-- <script defer src="js/simple-adaptive-slider.js"></script> -->
     <script defer src="js/uikit.min.js"></script>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          // активация слайдера
-          new ItcSimpleSlider('.itcss', {
-            loop: true,
-            autoplay: true,
-            swipe: true
-          });
-        });
-      </script> -->
-
     <title>Система отчистки стоков</title>
 </head>
 <body>
@@ -33,7 +21,7 @@
                 <header class="header">
                     <div class="container header__container" id="header__container">
                         <a href="#" class="geoIP">Москва</a>
-                        <a href="index.html" class="logo">
+                        <a href="./main.html" class="logo">
                             <img src="img/logo.png" alt="логотип" class="logo__img">
                         </a>
                         <div class="forUsers">
@@ -58,7 +46,7 @@
                             <a href="#" class="menu__link">Новости</a>
                         </li>
                         <li class="menu__item">
-                            <a href="./cleaning.html" class="menu__link">О системах очистки</a>
+                            <a href="./cleaning.html" class="menu__link" id="link--cleaning">О системах очистки</a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link">Сотрудничество</a>
@@ -71,13 +59,18 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="tooltip__cleaning" id="tooltip__cleaning">
+                    <a class="cleaning__point">Документация</a>
+                    <a class="cleaning__point">Как выбрать канализацию?</a>
+                    <a class="cleaning__point">Вопрос/Ответ</a>
+                </div>
             </div>
             <main class="main-content">
                 <section class="main__notfound">
                     <div class="notfound__content">
                         <p class="notfound__title">404</p>
                         <p class="notfound__subtitle">такой страницы не существует, <br> возможно адрес введен с ошибкой</p>
-                        <a href="./index.html" class="notfound__button">перейти на главную</a>
+                        <a href="./main.html" class="notfound__button">перейти на главную</a>
                     </div>
                 </section>
             </main>
@@ -99,7 +92,7 @@
                     </li>
                 </ul>
             </nav>
-            <a href="index.html" class="logo-footer">
+            <a href="main.html" class="logo-footer">
                 <img src="img/logo.png" alt="" class="logo-footer__img">
             </a>
             <div class="footer-info">
