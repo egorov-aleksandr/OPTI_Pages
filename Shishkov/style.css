@@ -113,7 +113,7 @@ p.newSite{
         align-items: center;
         background-color: black;
         overflow-x: hidden;
-        margin-top: 45%;
+        margin-top: 30%;
     }
     .leftBlock{
         position: relative;
@@ -124,6 +124,8 @@ p.newSite{
         width: 143px;
         height: 100%;
         z-index: 0;
+        margin-left: -37px;
+        margin-top: 94px;
     }
     .leftBlock__text{
         width: 100px;
@@ -138,7 +140,7 @@ p.newSite{
         border-bottom: 2px solid #D3B070;
         padding-top: 9.8px;
         /* margin: 0 auto; */
-        /* margin-left: 36px; */
+        margin-left: 45px;
         margin-top: -20px;
     }
     img.iconImg{
@@ -158,7 +160,7 @@ p.newSite{
     height: auto;
     }
     p.newSite{
-        /*margin-left: 6px; */
+        margin-left: 6px;
         font-family: 'Gothic A1', sans-serif;
         font-style: normal;
         font-weight: 700;
