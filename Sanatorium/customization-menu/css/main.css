@@ -77,11 +77,11 @@ a {
 	border-bottom: 1px solid var(--white-color);
 }
 .customization-menu__title-smaller {
-	margin-top: 20px;
+	margin-top: 14px;
 	font-size: 20px;
 	border-bottom: none;
 	border-top: 1px solid var(--grey-color);
-	padding-top: 20px;
+	padding-top: 14px;
 	padding-bottom: 0;
 }
 .customization-menu__container {
@@ -121,20 +121,23 @@ a {
 	display: flex;
 }
 .customization-menu__item-color {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-grid-column-span: 3;
-	grid-column: 3 span;
 }
 .customization-menu__item-toggle {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	-ms-grid-column-span: 6;
+	grid-column: 6 span;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 .customization-menu__item-images {
 	-ms-grid-column-span: 12;
@@ -178,7 +181,6 @@ a {
 }
 .customization-menu__label-color {
 	font-size: 18px;
-	margin-top: 8px;
 	max-width: 180px;
 	text-align: center;
 	overflow-wrap: break-word;
@@ -245,9 +247,10 @@ a {
 .customization-menu__image {
 	border: 4px solid var(--grey-color);
 	border-radius: 20px;
-	-webkit-transition: border 0.3s ease-in;
-	-o-transition: border 0.3s ease-in;
-	transition: border 0.3s ease-in;
+	-webkit-transition: border 0.2s ease-in;
+	-o-transition: border 0.2s ease-in;
+	transition: border 0.2s ease-in;
+	height: 100%;
 }
 @-webkit-keyframes buttonRotation {
 	0% {
@@ -275,23 +278,5 @@ a {
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
-	}
-}
-@media (max-width: 891px) {
-	.customization-menu__item-toggle {
-		-ms-grid-column-span: 4;
-		grid-column: 4 span;
-	}
-	.customization-menu__block {
-		width: -webkit-min-content;
-		width: -moz-min-content;
-		width: min-content;
-		margin-right: 20px;
-	}
-}
-@media (max-width: 768px) {
-	.customization-menu__item-color {
-		-ms-grid-column-span: 4;
-		grid-column: 4 span;
 	}
 }

@@ -11,7 +11,7 @@ cogwheelBtn.addEventListener("click", () => {
 	}
 });
 
-// block picker anim
+// block picker
 const containers = document.querySelectorAll(
 	".customization-menu__container-images"
 );
