@@ -1,4 +1,3 @@
-// menu anim
 const cogwheelBtn = document.querySelector(
 	".customization-menu__button-cogwheel"
 );
@@ -11,7 +10,6 @@ cogwheelBtn.addEventListener("click", () => {
 	}
 });
 
-// block picker
 const containers = document.querySelectorAll(
 	".customization-menu__container-images"
 );
