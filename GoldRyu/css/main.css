@@ -1174,6 +1174,9 @@ a {
 	border: 3px solid var(--blue-color);
 }
 .main-design__label-color {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	-ms-grid-column-span: 3;
 	grid-column: 3 span;
 	min-height: 34px;
