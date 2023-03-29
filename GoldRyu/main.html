@@ -6,7 +6,7 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="theme-color" content="#111111" />
-		<title>GoldRyu</title>
+		<title>GoldRye</title>
 		<link
 			rel="preload"
 			href="fonts/MontserratAlternates-Bold.woff2"
@@ -210,7 +210,7 @@
 												class="btn-reset button button__primary main-hero__button"
 												>перейти в каталог </a
 											><a
-												href="#"
+												href="./quiz.html"
 												class="btn-reset button button__secondary main-hero__button"
 												>подобрать станцию</a
 											>
@@ -254,7 +254,7 @@
 												class="btn-reset button button__primary main-hero__button"
 												>перейти в каталог </a
 											><a
-												href="#"
+												href="./quiz.html"
 												class="btn-reset button button__secondary main-hero__button"
 												>подобрать станцию</a
 											>
@@ -300,7 +300,7 @@
 												class="btn-reset button button__primary main-hero__button"
 												>перейти в каталог </a
 											><a
-												href="#"
+												href="./quiz.html"
 												class="btn-reset button button__secondary main-hero__button"
 												>подобрать станцию</a
 											>
@@ -1049,26 +1049,43 @@
 						<div class="swiper main-feedback__slider">
 							<div class="swiper-wrapper main-feedback__wrapper">
 								<div class="swiper-slide main-feedback__slide">
-									<picture class="main-feedback__picture"
-										><source
-											srcset="./img/feedback-1.webp"
-											type="image/webp"
-											media="(max-width: 480px)" />
-										<source
-											srcset="./img/feedback-1-1024.webp"
-											type="image/webp"
-											media="(max-width: 1024px)" />
-										<source
-											srcset="./img/feedback-1.webp"
-											type="image/webp" />
-										<img
-											loading="lazy"
-											src="./img/feedback-1.png"
-											class="image main-feedback__image"
-											width="410"
-											height="271"
-											alt="Превью"
-									/></picture>
+									<div class="main-feedback__container-video">
+										<div class="main-feedback__video-play">
+											<img
+												loading="lazy"
+												src="./img/play.svg"
+												class="image main-feedback__icon-play"
+												width="26"
+												height="37"
+												alt="Иконка play"
+											/>
+										</div>
+										<div
+											class="main-feedback__video-control main-feedback__video-over"
+										></div>
+										<video
+											preload="metadata"
+											muted
+											poster="./img/feedback-1.png"
+											class="main-feedback__video"
+										>
+											<source
+												src="./img/video.webm"
+												type="video/webm"
+											/>
+											<source
+												src="./img/video.mp4"
+												type="video/mp4"
+											/>
+										</video>
+										<div
+											class="main-feedback__container-fullscreen"
+										>
+											<button
+												class="btn-reset main-feedback__button-fullscreen"
+											></button>
+										</div>
+									</div>
 									<div class="main-feedback__container-text">
 										<h3
 											class="main-feedback__subtitle title__h3"
@@ -1089,26 +1106,43 @@
 									</div>
 								</div>
 								<div class="swiper-slide main-feedback__slide">
-									<picture class="main-feedback__picture"
-										><source
-											srcset="./img/feedback-2.webp"
-											type="image/webp"
-											media="(max-width: 480px)" />
-										<source
-											srcset="./img/feedback-2-1024.webp"
-											type="image/webp"
-											media="(max-width: 1024px)" />
-										<source
-											srcset="./img/feedback-2.webp"
-											type="image/webp" />
-										<img
-											loading="lazy"
-											src="./img/feedback-2.png"
-											class="image main-feedback__image"
-											width="410"
-											height="271"
-											alt="Превью"
-									/></picture>
+									<div class="main-feedback__container-video">
+										<div class="main-feedback__video-play">
+											<img
+												loading="lazy"
+												src="./img/play.svg"
+												class="image main-feedback__icon-play"
+												width="26"
+												height="37"
+												alt="Иконка play"
+											/>
+										</div>
+										<div
+											class="main-feedback__video-control main-feedback__video-over"
+										></div>
+										<video
+											preload="metadata"
+											muted
+											poster="./img/feedback-2.png"
+											class="main-feedback__video"
+										>
+											<source
+												src="./img/video.webm"
+												type="video/webm"
+											/>
+											<source
+												src="./img/video.mp4"
+												type="video/mp4"
+											/>
+										</video>
+										<div
+											class="main-feedback__container-fullscreen"
+										>
+											<button
+												class="btn-reset main-feedback__button-fullscreen"
+											></button>
+										</div>
+									</div>
 									<div class="main-feedback__container-text">
 										<h3
 											class="main-feedback__subtitle title__h3"
@@ -1130,26 +1164,43 @@
 									</div>
 								</div>
 								<div class="swiper-slide main-feedback__slide">
-									<picture class="main-feedback__picture"
-										><source
-											srcset="./img/feedback-3.webp"
-											type="image/webp"
-											media="(max-width: 480px)" />
-										<source
-											srcset="./img/feedback-3-1024.webp"
-											type="image/webp"
-											media="(max-width: 1024px)" />
-										<source
-											srcset="./img/feedback-3.webp"
-											type="image/webp" />
-										<img
-											loading="lazy"
-											src="./img/feedback-3.png"
-											class="image main-feedback__image"
-											width="410"
-											height="271"
-											alt="Превью"
-									/></picture>
+									<div class="main-feedback__container-video">
+										<div class="main-feedback__video-play">
+											<img
+												loading="lazy"
+												src="./img/play.svg"
+												class="image main-feedback__icon-play"
+												width="26"
+												height="37"
+												alt="Иконка play"
+											/>
+										</div>
+										<div
+											class="main-feedback__video-control main-feedback__video-over"
+										></div>
+										<video
+											preload="metadata"
+											muted
+											poster="./img/feedback-3.png"
+											class="main-feedback__video"
+										>
+											<source
+												src="./img/video.webm"
+												type="video/webm"
+											/>
+											<source
+												src="./img/video.mp4"
+												type="video/mp4"
+											/>
+										</video>
+										<div
+											class="main-feedback__container-fullscreen"
+										>
+											<button
+												class="btn-reset main-feedback__button-fullscreen"
+											></button>
+										</div>
+									</div>
 									<div class="main-feedback__container-text">
 										<h3
 											class="main-feedback__subtitle title__h3"
@@ -1170,26 +1221,43 @@
 									</div>
 								</div>
 								<div class="swiper-slide main-feedback__slide">
-									<picture class="main-feedback__picture"
-										><source
-											srcset="./img/feedback-2.webp"
-											type="image/webp"
-											media="(max-width: 480px)" />
-										<source
-											srcset="./img/feedback-2-1024.webp"
-											type="image/webp"
-											media="(max-width: 1024px)" />
-										<source
-											srcset="./img/feedback-2.webp"
-											type="image/webp" />
-										<img
-											loading="lazy"
-											src="./img/feedback-2.png"
-											class="image main-feedback__image"
-											width="410"
-											height="271"
-											alt="Превью"
-									/></picture>
+									<div class="main-feedback__container-video">
+										<div class="main-feedback__video-play">
+											<img
+												loading="lazy"
+												src="./img/play.svg"
+												class="image main-feedback__icon-play"
+												width="26"
+												height="37"
+												alt="Иконка play"
+											/>
+										</div>
+										<div
+											class="main-feedback__video-control main-feedback__video-over"
+										></div>
+										<video
+											preload="metadata"
+											muted
+											poster="./img/feedback-2.png"
+											class="main-feedback__video"
+										>
+											<source
+												src="./img/video.webm"
+												type="video/webm"
+											/>
+											<source
+												src="./img/video.mp4"
+												type="video/mp4"
+											/>
+										</video>
+										<div
+											class="main-feedback__container-fullscreen"
+										>
+											<button
+												class="btn-reset main-feedback__button-fullscreen"
+											></button>
+										</div>
+									</div>
 									<div class="main-feedback__container-text">
 										<h3
 											class="main-feedback__subtitle title__h3"
@@ -1211,26 +1279,43 @@
 									</div>
 								</div>
 								<div class="swiper-slide main-feedback__slide">
-									<picture class="main-feedback__picture"
-										><source
-											srcset="./img/feedback-3.webp"
-											type="image/webp"
-											media="(max-width: 480px)" />
-										<source
-											srcset="./img/feedback-3-1024.webp"
-											type="image/webp"
-											media="(max-width: 1024px)" />
-										<source
-											srcset="./img/feedback-3.webp"
-											type="image/webp" />
-										<img
-											loading="lazy"
-											src="./img/feedback-3.png"
-											class="image main-feedback__image"
-											width="410"
-											height="271"
-											alt="Превью"
-									/></picture>
+									<div class="main-feedback__container-video">
+										<div class="main-feedback__video-play">
+											<img
+												loading="lazy"
+												src="./img/play.svg"
+												class="image main-feedback__icon-play"
+												width="26"
+												height="37"
+												alt="Иконка play"
+											/>
+										</div>
+										<div
+											class="main-feedback__video-control main-feedback__video-over"
+										></div>
+										<video
+											preload="metadata"
+											muted
+											poster="./img/feedback-3.png"
+											class="main-feedback__video"
+										>
+											<source
+												src="./img/video.webm"
+												type="video/webm"
+											/>
+											<source
+												src="./img/video.mp4"
+												type="video/mp4"
+											/>
+										</video>
+										<div
+											class="main-feedback__container-fullscreen"
+										>
+											<button
+												class="btn-reset main-feedback__button-fullscreen"
+											></button>
+										</div>
+									</div>
 									<div class="main-feedback__container-text">
 										<h3
 											class="main-feedback__subtitle title__h3"
@@ -1418,15 +1503,31 @@
 						</ul>
 					</div>
 				</section>
+				<div class="up-button container up-button__container">
+					<button class="btn-reset up-button__button">
+						<img
+							loading="lazy"
+							src="./img/up.svg"
+							class="image up-button__icon"
+							width="45"
+							height="45"
+							alt="Кнопка вверх"
+						/>
+					</button>
+				</div>
 			</main>
 			<footer class="footer">
 				<div class="container footer__container">
 					<ul class="footer__list list-reset">
 						<li class="footer__item footer__item-right">
-							<a href="#" class="footer__link">Вакансии</a>
+							<a href="./about.html#vacancy" class="footer__link"
+								>Вакансии</a
+							>
 						</li>
 						<li class="footer__item footer__item-right">
-							<a href="#" class="footer__link">Сотрудничество</a>
+							<a href="./cooperation.html" class="footer__link"
+								>Сотрудничество</a
+							>
 						</li>
 						<li class="footer__item footer__item-right">
 							<a href="#" class="footer__link">Карта сайта</a>
